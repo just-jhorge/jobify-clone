@@ -7,7 +7,7 @@ import UIPathLogo from "../../Assets/Img/logosection/UIPathLogo.svg";
 const LogoSection = () => {
     return (
         <section className="px-16 lg:px-32 py-16">
-            <div className="flex items-center justify-between md:flex-row flex-col gap-8">
+            <div className="grid grid-rows-2 grid-cols-2 md:grid-cols-4 md:grid-rows-1 gap-12">
                 {[HeroLogo, MicrosoftLogo, UIPathLogo, GoogleLogo].map(
                     (img, index) => (
                         <img

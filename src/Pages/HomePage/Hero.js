@@ -12,7 +12,7 @@ import Woman from "../../Assets/Img/woman.png";
 
 const Hero = () => {
     return (
-        <section className="h-[85vh] mt-20 px-4 md:px-16 lg:px-32 grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 bg-secondary">
+        <section className="h-[85vh] px-4 md:px-16 lg:px-32 grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 bg-secondary">
             <HeroLeft />
             <HeroRight />
         </section>
@@ -20,7 +20,7 @@ const Hero = () => {
 };
 
 const HeroLeft = () => (
-    <div className="relative flex flex-col md:items-start items-center justify-end lg:justify-center pb-14 md:pb-0 text-center lg:text-left">
+    <div className="relative flex flex-col md:items-start items-center justify-end lg:justify-center text-center lg:text-left">
         <h1 className="capitalize text-4xl md:text-5xl lg:text-7xl font-black font-primary md:leading-tight mb-2 md:mb-10">
             Find your dream job with us
         </h1>
@@ -28,8 +28,8 @@ const HeroLeft = () => (
             With us the job search app, you are always one click away from your
             dream job, search for new job from the comfort of your home
         </p>
-        <div className="flex gap-x-4 w-full justify-center items-center lg:justify-start mx-auto">
-            <div className="col-span-3 flex gap-x-4">
+        <div className="flex flex-col md:flex-row gap-x-4 w-full justify-center items-end lg:justify-start mx-auto">
+            <div className="flex flex-col md:items-center md:flex-row space-y-3 md:space-y-0 space-x-0 md:space-x-3 mb-5 md:mb-0">
                 <Input
                     type="text"
                     placeholder="Job Title"
@@ -43,7 +43,7 @@ const HeroLeft = () => (
                     className="w-20"
                 />
             </div>
-            <div className="flex">
+            <div className="flex justify-start">
                 <Button
                     text="Search"
                     color="primary"
@@ -73,20 +73,6 @@ const HeroRight = () => (
                     </div>
                 </div>
             </motion.div>
-            {/* <motion.div className="circular-motion3 center-object border-[1px] border-gray-400 bg-background p-1 md:p-2 flex items-center gap-2 md:gap-4 z-30 rounded-md">
-                <img src={Microsoft} className="h-4 w-4 md:h-8 md:w-8" alt="" />
-                <div className="flex flex-col gap-1 md:gap-2">
-                    <div className="text-xs md:text-sm text-green-700 font-bold inline-flex items-center gap-2">
-                        <span>UI/UX Designer</span>
-                    </div>
-                    <div className="text-xxs md:text-xs inline-flex items-center gap-2 md:gap-4">
-                        <span>Microsoft</span>
-                        <button className="button button-secondary py-0.5 px-1.5 text-xxs md:text-xs text-primary rounded-md !border-0">
-                            Apply
-                        </button>
-                    </div>
-                </div>
-            </motion.div> */}
         </div>
         <div>
             <div className="place-center center-object circular-path w-[200px] h-[200px] md:w-[300px] md:h-[300px]" />
@@ -104,7 +90,7 @@ const HeroRight = () => (
             </motion.div>
         </div>
         <div>
-            <div className="place-center center-object circular-path w-[80px] h-[800px] md:w-[160px] md:h-[160px]" />
+            <div className="place-center center-object circular-path w-[80px] h-[80px] md:w-[160px] md:h-[160px]" />
             <motion.div className="circular-motion3 center-object border-[1px] border-gray-400 bg-background p-1 md:p-2 flex items-center gap-2 md:gap-4 z-10 rounded-md">
                 <Briefcase className="h-8 w-8 md:h-10 md:w-10 mb-1 md:mb-2 bg-purple-300 text-purple-700 p-2 rounded-md" />
                 <span className="text-xs md:text-sm font-bold">180k+</span>

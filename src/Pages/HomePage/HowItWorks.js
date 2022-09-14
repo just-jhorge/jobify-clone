@@ -29,16 +29,13 @@ const steps = [
 
 const HowItWorks = () => {
     return (
-        <section className="grid md:grid-cols-2 items-center px-4 md:px-32 my-8 md:my-32">
-            <div className="text-center md:text-left mb-5">
+        <section className="grid md:grid-cols-2 items-center px-4 py-16 md:px-32 bg-gray-100">
+            <div className="text-center md:text-left mb-10">
                 <h1 className="font-black text-4xl sm:text-3xl md:text-7xl mb-4 md:mb-10">
                     How it works?
                 </h1>
-                <h2 className="font-semibold text-2xl sm:text-3xl md:text-5xl mb-2 md:mb-10">
-                    Follow <br className="hidden md:block" /> 4 easy steps{" "}
-                </h2>
-                <p className="md:text-lg text-gray-500">
-                    Follow this few steps to get started and get your dream job
+                <p className="text-sm md:text-lg text-gray-500 ">
+                    Follow these few steps to get started and get your dream job
                 </p>
             </div>
             <div className="hidden grid-cols-2 gap-4 lg:gap-8 md:px-4 lg:px-8 md:grid">

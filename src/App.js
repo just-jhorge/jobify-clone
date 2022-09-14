@@ -4,10 +4,11 @@ import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/HomePage";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import FindJobs from "./Pages/FindJobs/FindJobs";
-import Login from "./Pages/Login/Login";
+import Login from "./Pages/LoginPage/Login";
 import Register from "./Pages/Register/Register";
 import Profile from "./Pages/Profile/Profile";
 import NoPage from "./Pages/NoPage/NoPage";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
+            <Footer />
         </>
     );
 };

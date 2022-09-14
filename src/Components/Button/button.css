@@ -3,11 +3,11 @@
 }
 
 .button-primary {
-    @apply bg-primary border-primary text-white hover:bg-white hover:text-primary;
+    @apply bg-primary border-primary text-white hover:bg-transparent hover:text-primary;
 }
 
 .button-secondary {
-    @apply bg-secondary border-primary text-black hover:bg-white hover:text-primary;
+    @apply bg-transparent border-primary text-primary hover:bg-white hover:text-primary;
 }
 
 .button-default {
