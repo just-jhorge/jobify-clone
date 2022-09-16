@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
+import Alerts from "../Alerts/Alerts";
 import Navbar from "../Navbar/Navbar";
 
 const Layout = () => {
+    const { isLoggedIn } = useContext(AuthContext);
     return (
         <>
-            <Navbar />
+            {isLoggedIn && <Navbar />}
             <Outlet />
-            <div>Alerts</div>
+            <Alerts />
             <div>overlay</div>
         </>
     );

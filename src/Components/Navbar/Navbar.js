@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../Assets/Img/jobify.png";
 import MessageIcon from "../../Assets/Svg/MessageIcon";
 import BellIcon from "../../Assets/Svg/BellIcon";
+import CaretDown from "../../Assets/Svg/CaretDown";
 import Dropdown from "../Dropdown/Dropdown";
-import { BiUser } from "react-icons/bi";
-import { RiSettings4Line, RiCloseFill, RiMenu3Fill } from "react-icons/ri";
+import { RiCloseFill, RiMenu3Fill } from "react-icons/ri";
+import { AuthContext } from "../../Context/AuthContext";
 
 const links = [
     { name: "Dashboard", link: "/dashboard" },
@@ -14,17 +15,17 @@ const links = [
 ];
 
 const dropdownlist = [
-    { icon: <BiUser className="text-primary h-5 w-8" />, link: "/app/profile" },
+    { title: "Profile", link: "/app/profile" },
     {
-        icon: <RiSettings4Line className="text-primary h-5 w-8" />,
+        title: "Settings",
         link: "/app/settings",
     },
 ];
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    // const {logout} = useContext(AuthContext)
-    // const {userData} = useContext(AuthContext)
+    const { logOut } = useContext(AuthContext);
+    const { userData } = useContext(AuthContext);
     const nodeRef = useRef(null);
 
     // useClickOutside(nodeRef, () => {setOpen(false)})
@@ -79,25 +80,42 @@ const Navbar = () => {
                         </div>
                     </li>
                     <li>
-                        <div className="py-0.5 flex w-full" role="none">
-                            {dropdownlist.map((item, index) => (
-                                <button
-                                    key={index}
-                                    className="text-gray-900 hover:bg-secondary disabled:bg-gray-300 disabled:text-white block px-4 py-2 text-sm w-full capitalize"
-                                >
-                                    <Link
-                                        to={item.link}
-                                        className="w-full text-xl"
+                        <Dropdown
+                            button={
+                                <div className="flex gap-2 items-center uppercase bg-secondary px-2 py-0.5 rounded-md">
+                                    <img src={userData.image} alt="" />
+                                    <p>
+                                        {userData?.name
+                                            .split(" ")
+                                            .map((name) => name.slice(0, 1))}
+                                    </p>
+                                    <CaretDown className="h-4 w-4" />
+                                </div>
+                            }
+                        >
+                            <div
+                                className="py-0.5 w-full space-y-0.5"
+                                role="none"
+                            >
+                                {dropdownlist.map((item, index) => (
+                                    <button
+                                        key={index}
+                                        className="text-gray-700 hover:bg-secondary disabled:bg-gray-300 disabled:text-white block px-4 py-2 text-sm w-full capitalize"
                                     >
-                                        {item.icon}
-                                    </Link>
+                                        <Link to={item.link} className="w-full">
+                                            {item.title}
+                                        </Link>
+                                    </button>
+                                ))}
+                                <button
+                                    className="text-red-600 hover:bg-secondary disabled:bg-gray-300 disabled:text-white block px-4 py-2 text-sm capitalize"
+                                    onClick={logOut}
+                                >
+                                    Log out
                                 </button>
-                            ))}
-                        </div>
+                            </div>
+                        </Dropdown>
                     </li>
-                    <button className="text-gray-700 hover:bg-secondary disabled:bg-gray-300 disabled:text-white block px-4 py-2 text-sm capitalize">
-                        Log out
-                    </button>
                 </ul>
             </nav>
         </header>

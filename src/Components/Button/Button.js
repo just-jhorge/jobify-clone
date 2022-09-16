@@ -27,7 +27,7 @@ const Button = ({
             disabled={disabled}
         >
             {icon && <div className="h-4 md:h-5 w-4 md:w-5">{icon}</div>}
-            <span className="p-0">{loading ? "Please wait" : text}</span>
+            <span className="p-0">{loading ? "Please wait..." : text}</span>
         </button>
     );
 };

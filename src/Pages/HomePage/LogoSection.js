@@ -12,6 +12,7 @@ const LogoSection = () => {
                     (img, index) => (
                         <img
                             src={img}
+                            key={index}
                             className="h-8 md:h-12"
                             alt={`img ${index}`}
                         />
