@@ -225,7 +225,7 @@ h6 {
 
 .border-gradient {
     border: 2px solid;
-    border-color: #00e0b8;
+    border-color: primary #00e0b8;
     border-image: linear-gradient(
             90deg,
             rgba(216, 91, 232, 0.7) 0%,
