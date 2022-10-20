@@ -1,12 +1,14 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { slideVerticalAnimation } from "../../Utils/animation";
+import { useClickOutside } from "../../Utils/Hooks";
 
 const Dropdown = ({ button, children }) => {
     const [isOpen, setIsOpen] = useState(false);
     const nodeRef = useRef(null);
 
-    // useClickOutside(nodeRef, () => setIsOpen(false));
+    useClickOutside(nodeRef, () => setIsOpen(false));
+
     return (
         <div className="relative inline-block text-left" ref={nodeRef}>
             <div>

@@ -159,9 +159,7 @@ export const useUserJobsData = () => {
             const userJobsData = docs.docs[0].id;
 
             docRef = doc(db, "userJobsData", userJobsData);
-            await updateDoc(docRef, {
-                [type]: arrayUnion(jobId),
-            });
+            await updateDoc(docRef, { [type]: arrayUnion(jobId) });
 
             fetchUserJobsData();
             return true;

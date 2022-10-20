@@ -7,6 +7,7 @@ import CaretDown from "../../Assets/Svg/CaretDown";
 import Dropdown from "../Dropdown/Dropdown";
 import { RiCloseFill, RiMenu3Fill } from "react-icons/ri";
 import { AuthContext } from "../../Context/AuthContext";
+import { useClickOutside } from "../../Utils/Hooks";
 
 const links = [
     { name: "Dashboard", link: "/dashboard" },
@@ -28,7 +29,9 @@ const Navbar = () => {
     const { userData } = useContext(AuthContext);
     const nodeRef = useRef(null);
 
-    // useClickOutside(nodeRef, () => {setOpen(false)})
+    useClickOutside(nodeRef, () => {
+        setOpen(false);
+    });
 
     return (
         <header
